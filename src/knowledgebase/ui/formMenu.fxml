@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+
+<!--<?import javafx.scene.*?> -->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="656.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="knowledgebase.KnowledgeBaseController">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="mnuInsert" mnemonicParsing="false" onAction="#insertScreen" text="Insert" />
+                        <MenuItem fx:id="mnuClose" mnemonicParsing="false" onAction="#closeApp" text="Quit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Search">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </MenuBar>
+            <HBox spacing="10.0">
+               <children>
+                  <TextField fx:id="txtUsername" promptText="username" visible="false" />
+                  <PasswordField fx:id="txtPassword" promptText="password" visible="false" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnInsert" mnemonicParsing="false" onAction="#insertButtonClicked" text="Insert" />
+                  <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#editButtonClicked" text="Edit" />
+                  <Button fx:id="btnDelete" layoutX="344.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteButtonClicked" text="Delete" />
+                  <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#cancelButtonClicked" text="Cancel" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="4.0" prefWidth="579.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Copyright - Michel Koti 2017" />
+         </children>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <center>
+      <TableView fx:id="tblView" prefHeight="385.0" prefWidth="315.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="cellShortDesc" prefWidth="238.0" text="Short Desc" />
+          <TableColumn fx:id="cellDetDesc" prefWidth="361.0" text="Detailed Desc" />
+        </columns>
+      </TableView>
+   </center>
+   <right>
+      <Pane prefHeight="385.0" prefWidth="326.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="text1" layoutX="17.0" layoutY="26.0" prefHeight="27.0" prefWidth="297.0" promptText="Short description" />
+            <TextArea fx:id="text2" layoutX="17.0" layoutY="80.0" prefHeight="163.0" prefWidth="297.0" promptText="Detailed description" />
+            <ComboBox fx:id="combo1" layoutX="18.0" layoutY="275.0" prefHeight="27.0" prefWidth="298.0" promptText="Select type" />
+            <Label fx:id="label1" layoutX="37.0" layoutY="312.0" text="Label" visible="false" />
+            <Label fx:id="label2" layoutX="201.0" layoutY="312.0" text="Label" visible="false" />
+            <Label layoutX="18.0" layoutY="9.0" text="Short Description" />
+            <Label layoutX="18.0" layoutY="63.0" text="Detailed Description" />
+            <Label layoutX="19.0" layoutY="258.0" text="Type" />
+         </children>
+      </Pane>
+   </right>
+</BorderPane>
